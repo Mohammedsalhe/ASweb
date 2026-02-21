@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السرداح | التطوير العقاري وإدارة المشاريع</title>
+    <meta name="description" content="السرداح - مصداقية تسبق الربح. تطوير عقاري، إدارة مشاريع، واستشارات هندسية في ليبيا ودولياً.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ====================================================================
+           السرداح – هوية معمارية فاخرة (نسخة منقحة)
+           الألوان: بيج ناعم، بني ترابي، أسود أنيق + لمسات ذهبية 
+           ==================================================================== */
+
+        :root {
+            --beige-soft: #F5F0E8;       /* بيج ناعم - للخلفيات */
+            --beige-dark: #D4C5B2;       /* بيج غامق - للحدود */
+            --brown-strong: #6B4F3F;      /* بني غني */
+            --brown-deep: #4A3A2E;        /* بني داكن */
+            --black-rich: #1E1E1E;        
+            --gold-accent: #B8935A;        /* ذهبي هادئ */
+            --off-white: #FFFFFF;          
+            
+            /* الظلال */
+            --shadow-card: 0 10px 30px rgba(0,0,0,0.05);
+            --shadow-heavy: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--off-white);
+            color: var(--black-rich);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* ===== Language Switcher ===== */
+        .lang-switcher {
+            background: transparent;
+            border: 2px solid var(--gold-accent);
+            color: var(--beige-soft);
+            padding: 5px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 15px;
+            transition: 0.3s;
+        }
+        .lang-switcher:hover {
+            background: var(--gold-accent);
+            color: var(--black-rich);
+        }
+
+        /* =====  شريط العلوي ===== */
+        .top-bar {
+            background: var(--black-rich);
+            color: var(--beige-soft);
+            padding: 10px 0;
+            border-bottom: 2px solid var(--gold-accent);
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            color: var(--beige-soft);
+        }
+
+        .top-bar i {
+            color: var(--gold-accent);
+        }
+
+        .top-bar-links a {
+            color: var(--beige-soft);
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .top-bar-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        /* =====  الهيدر ===== */
+        .main-header {
+            background: var(--black-rich);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--beige-dark);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(145deg, var(--gold-accent), var(--brown-strong));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.6rem;
+            color: var(--beige-soft);
+            font-weight: 800;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--beige-dark);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .main-nav a {
+            color: var(--beige-soft);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            background: rgba(184,147,90,0.1);
+            border-color: var(--gold-accent);
+            color: var(--gold-accent);
+        }
+
+        .contact-header-btn {
+            background: transparent;
+            border: 2px solid var(--gold-accent);
+            color: var(--gold-accent);
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .contact-header-btn:hover {
+            background: var(--gold-accent);
+            color: var(--black-rich);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--gold-accent);
+        }
+
+        /* =====  HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(120deg, #2c2c2c 0%, #3a3a3a 50%, #6b4f3f 100%);
+            position: relative;
+            padding: 100px 0 80px;
+            overflow: hidden;
+        }
+
+        .hero-section::after {
+            content: "AL-SIRDAH";
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(245,240,232,0.02);
+            letter-spacing: 10px;
+            white-space: nowrap;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .hero-badge {
+            background: rgba(0,0,0,0.3);
+            color: var(--gold-accent);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid var(--gold-accent);
+            font-size: 0.9rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .highlight {
+            color: var(--gold-accent);
+            display: block;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            color: #f0f0f0;
+            max-width: 90%;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold-accent);
+        }
+
+        .stat-text {
+            color: #e0e0e0;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .image-frame {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* =====  ABOUT SECTION ===== */
+        .about-section {
+            background: var(--beige-soft);
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--brown-deep);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold-accent);
+            margin: 15px auto 0;
+        }
+
+        .section-subtitle {
+            color: var(--brown-strong);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .about-text h3 {
+            color: var(--brown-deep);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #4a4a4a;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .vision-box, .mission-box {
+            padding: 20px;
+            background: var(--beige-soft);
+            border-radius: 20px;
+            border-right: 3px solid var(--gold-accent);
+        }
+
+        .vision-box h4, .mission-box h4 {
+            color: var(--brown-deep);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-image {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* =====  SERVICES SECTION ===== */
+        .services-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--beige-soft);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid var(--beige-dark);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-accent);
+            box-shadow: var(--shadow-card);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--gold-accent);
+            font-size: 1.8rem;
+            border: 2px solid var(--beige-dark);
+        }
+
+        .service-card h3 {
+            color: var(--brown-deep);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #5a5a5a;
+            font-size: 0.9rem;
+        }
+
+        /* =====  PRESENCE SECTION ===== */
+        .presence-section {
+            background: var(--brown-deep);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .presence-section .section-title,
+        .presence-section .section-subtitle {
+            color: white;
+        }
+
+        .presence-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .presence-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .presence-stat {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .presence-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold-accent);
+            display: block;
+        }
+
+        .presence-map {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* =====  PARTNERS SECTION ===== */
+        .partners-section {
+            background: var(--beige-soft);
+            padding: 80px 0;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .partner-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--beige-dark);
+            transition: 0.3s;
+        }
+
+        .partner-card:hover {
+            border-color: var(--gold-accent);
+            transform: translateY(-3px);
+        }
+
+        .partner-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--beige-soft);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 2rem;
+            color: var(--brown-strong);
+        }
+
+        .partner-card h4 {
+            color: var(--brown-deep);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .partner-card p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* =====  CONTACT SECTION ===== */
+        .contact-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            background: var(--beige-soft);
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .contact-info h3 {
+            color: var(--brown-deep);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin: 30px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 15px;
+        }
+
+        .contact-item i {
+            width: 45px;
+            height: 45px;
+            background: var(--brown-strong);
+            color: var(--gold-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item a, .contact-item span {
+            color: var(--black-rich);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid var(--beige-dark);
+            border-radius: 12px;
+            font-family: 'Cairo', sans-serif;
+            background: white;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background: var(--brown-strong);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .contact-form button:hover {
+            background: var(--gold-accent);
+            color: var(--black-rich);
+        }
+
+        /* =====  FOOTER ===== */
+        .main-footer {
+            background: #111;
+            color: #aaa;
+            padding: 60px 0 30px;
+            border-top: 4px solid var(--gold-accent);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4 {
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-accent);
+            padding-right: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* =====  RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .partners-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 900px) {
+            .main-nav ul { display: none; }
+            .menu-toggle { display: block; }
+            .hero-content,
+            .about-content,
+            .presence-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            .hero-title { font-size: 2.2rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid,
+            .partners-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .vision-mission { grid-template-columns: 1fr; }
+        }
+  @media (max-width: 400px) {
+           body{display: none;}
+        }
+
+    </style>
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="fas fa-shield-alt"></i> المصداقية تسبق الربح</span>
+            <div style="display: flex; align-items: center;">
+                <div class="top-bar-links">
+                    <a href="tel:0922229991"><i class="fas fa-phone-alt"></i> 0922229991</a>
+                    <a href="mailto:info@sirdah.ly"><i class="fas fa-envelope"></i> info@sirdah.ly</a>
+                </div>
+                <button class="lang-switcher" onclick="toggleLanguage()">English</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- الهيدر -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>السرداح</h1>
+                    <p>للتطوير العقاري وإدارة المشاريع</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#presence">حضورنا</a></li>
+                    <li><a href="#partners">شركاؤنا</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="contact-header-btn">طلب استشارة</a>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- الرئيسية -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">تطوير عقاري منضبط</span>
+                    <h1 class="hero-title">
+                        نبني بالانضباط <span class="highlight">لا بالسرعة فقط</span>
+                    </h1>
+                    <p class="hero-description">
+                        في السرداح، المصداقية تسبق الربح. نلتزم بمنهج منضبط في التطوير العقاري وإدارة المشاريع، لنقدم قيمة حقيقية لعملائنا وشركائنا.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">+15</span>
+                            <span class="stat-text">عام من الخبرة</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">+30</span>
+                            <span class="stat-text">مشروع مكتمل</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-text">التزام بالمواعيد</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-frame">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800" alt="مشروع عقاري">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- من نحن -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">من نحن</h2>
+                <p class="section-subtitle">فلسفة وانضباط وجودة</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>السرداح للتطوير العقاري</h3>
+                    <p>
+                        مجموعة رائدة في التطوير العقاري وإدارة المشاريع، نؤمن بأن المصداقية هي أساس النجاح. نتبع نهجاً منضبطاً في كل مشروع، من التخطيط إلى التنفيذ والتسليم.
+                    </p>
+                    <div class="vision-mission">
+                        <div class="vision-box">
+                            <h4><i class="fas fa-eye"></i> رؤيتنا</h4>
+                            <p>أن نكون الخيار الأول في السوق الليبي والشرق الأوسط للتطوير العقاري المنضبط.</p>
+                        </div>
+                        <div class="mission-box">
+                            <h4><i class="fas fa-bullseye"></i> رسالتنا</h4>
+                            <p>تقديم مشاريع عقارية بجودة عالية، بشفافية كاملة، والتزام صارم بالجداول الزمنية.</p>
+                        </div>
+                    </div>
+                    <p style="font-style: italic; color: var(--brown-strong);">
+                        "المصداقية تسبق الربح – هذا ليس شعاراً، بل منهج عمل"
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800" alt="فريق العمل">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- خدماتنا -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خدماتنا</h2>
+                <p class="section-subtitle">خطوط أعمال متكاملة</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-city"></i></div>
+                    <h3>التطوير العقاري</h3>
+                    <p>تطوير مجمعات سكنية وتجارية متكاملة بمعايير عالمية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tasks"></i></div>
+                    <h3>إدارة المشاريع</h3>
+                    <p>إدارة احترافية للمشاريع من التخطيط حتى التسليم النهائي</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>الاستشارات</h3>
+                    <p>دراسات جدوى واستشارات هندسية متخصصة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>خدمات مساندة</h3>
+                    <p>دعم متكامل للمستثمرين والشركاء</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- حضورنا -->
+    <section class="presence-section" id="presence">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">نطاق حضورنا</h2>
+                <p class="section-subtitle">محلياً ودولياً</p>
+            </div>
+            <div class="presence-content">
+                <div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">ليبيا <span style="color: var(--gold-accent);">والعالم</span></h3>
+                    <p style="margin-bottom: 30px;">انطلاقاً من السوق الليبي، نوسع حضورنا الاستراتيجي ليشمل المنطقة العربية وأوروبا، حاملين معنا نهج الانضباط والجودة.</p>
+                    <div class="presence-stats">
+                        <div class="presence-stat">
+                            <span class="number">+8</span>
+                            <span>مدينة ليبية</span>
+                        </div>
+                        <div class="presence-stat">
+                            <span class="number">3</span>
+                            <span>دول عربية</span>
+                        </div>
+                        <div class="presence-stat">
+                            <span class="number">2</span>
+                            <span>شركاء أوروبيين</span>
+                        </div>
+                        <div class="presence-stat">
+                            <span class="number">2025</span>
+                            <span>التوسع القادم</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="presence-map">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800" alt="خريطة الحضور" style="width:100%; height:auto; display:block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- شركاؤنا -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">شركاؤنا</h2>
+                <p class="section-subtitle">نحقق النجاح معاً</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo"><i class="fas fa-hard-hat"></i></div>
+                    <h4>مكتب الهندسة المتقدمة</h4>
+                    <p>استشاري هندسي - ليبيا</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo"><i class="fas fa-university"></i></div>
+                    <h4>بنك التجارة</h4>
+                    <p>شريك مالي</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo"><i class="fas fa-draw-polygon"></i></div>
+                    <h4>Studio Milano</h4>
+                    <p>تصميم معماري - إيطاليا</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo"><i class="fas fa-scale-balanced"></i></div>
+                    <h4>مكتب المحاماة الدولي</h4>
+                    <p>استشارات قانونية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- اتصل بنا -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">اتصل بنا</h2>
+                <p class="section-subtitle">للاستفسارات وفرص الاستثمار</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>تواصل معنا</h3>
+                    <p>نرحب باستفساراتكم وطلباتكم على مدار الساعة</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>طرابلس - حي الأندلس - شارع النيل</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:0922229991">0922229991</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@sirdah.ly">info@sirdah.ly</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>السبت - الخميس: 9ص - 6م</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('تم استلام طلبك، سنتواصل معك قريباً');">
+                    <input type="text" placeholder="الاسم الكامل" required>
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                    <input type="tel" placeholder="رقم الهاتف">
+                    <select required>
+                        <option value="">نوع الاستفسار</option>
+                        <option>طلب استثمار</option>
+                        <option>استشارة هندسية</option>
+                        <option>شراكة</option>
+                        <option>أخرى</option>
+                    </select>
+                    <textarea placeholder="رسالتك" rows="4" required></textarea>
+                    <button type="submit">إرسال الطلب</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>السرداح</h3>
+                    <p>للتطوير العقاري وإدارة المشاريع</p>
+                    <p style="margin-top: 15px; font-size: 0.85rem;">المصداقية تسبق الربح</p>
+                </div>
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>خدماتنا</h4>
+                    <ul>
+                        <li><a href="#">التطوير العقاري</a></li>
+                        <li><a href="#">إدارة المشاريع</a></li>
+                        <li><a href="#">الاستشارات</a></li>
+                        <li><a href="#">الخدمات المساندة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>مكتب الرئيسي</h4>
+                    <p>طرابلس - ليبيا</p>
+                    <p>هاتف: 0922229991</p>
+                    <p>بريد: info@sirdah.ly</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="#" class="social-link" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" style="color: white;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" style="color: white;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 السرداح للتطوير العقاري. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Language Toggle (Demo) -->
+    <script>
+        let currentLang = 'ar';
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            
+            const btn = document.querySelector('.lang-switcher');
+            btn.textContent = currentLang === 'ar' ? 'English' : 'العربية';
+            
+            // In a real project, you would load translation files here
+            alert('Language switched to ' + (currentLang === 'ar' ? 'Arabic' : 'English') + ' (Demo)');
+        }
+
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const menu = document.querySelector('.main-nav ul');
+            menu.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
