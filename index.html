@@ -5,740 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>السرداح | التطوير العقاري وإدارة المشاريع</title>
     <meta name="description" content="السرداح - مصداقية تسبق الربح. تطوير عقاري، إدارة مشاريع، واستشارات هندسية في ليبيا ودولياً.">
+    <!-- ربط ملف CSS الخارجي -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        /* ====================================================================
-           السرداح – هوية معمارية فاخرة (نسخة منقحة)
-           الألوان: بيج ناعم، بني ترابي، أسود أنيق + لمسات ذهبية 
-           ==================================================================== */
-
-        :root {
-            --beige-soft: #F5F0E8;       /* بيج ناعم - للخلفيات */
-            --beige-dark: #D4C5B2;       /* بيج غامق - للحدود */
-            --brown-strong: #6B4F3F;      /* بني غني */
-            --brown-deep: #4A3A2E;        /* بني داكن */
-            --black-rich: #1E1E1E;        
-            --gold-accent: #B8935A;        /* ذهبي هادئ */
-            --off-white: #FFFFFF;          
-            
-            /* الظلال */
-            --shadow-card: 0 10px 30px rgba(0,0,0,0.05);
-            --shadow-heavy: 0 20px 40px rgba(0,0,0,0.08);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--off-white);
-            color: var(--black-rich);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        /* ===== Language Switcher ===== */
-        .lang-switcher {
-            background: transparent;
-            border: 2px solid var(--gold-accent);
-            color: var(--beige-soft);
-            padding: 5px 15px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            margin-right: 15px;
-            transition: 0.3s;
-        }
-        .lang-switcher:hover {
-            background: var(--gold-accent);
-            color: var(--black-rich);
-        }
-
-        /* =====  شريط العلوي ===== */
-        .top-bar {
-            background: var(--black-rich);
-            color: var(--beige-soft);
-            padding: 10px 0;
-            border-bottom: 2px solid var(--gold-accent);
-        }
-
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .top-bar span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-            color: var(--beige-soft);
-        }
-
-        .top-bar i {
-            color: var(--gold-accent);
-        }
-
-        .top-bar-links a {
-            color: var(--beige-soft);
-            margin-right: 20px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .top-bar-links a:hover {
-            color: var(--gold-accent);
-        }
-
-        /* =====  الهيدر ===== */
-        .main-header {
-            background: var(--black-rich);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--beige-dark);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(145deg, var(--gold-accent), var(--brown-strong));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.6rem;
-        }
-
-        .logo-text h1 {
-            font-size: 1.6rem;
-            color: var(--beige-soft);
-            font-weight: 800;
-            margin-bottom: 0;
-            line-height: 1.2;
-        }
-
-        .logo-text p {
-            font-size: 0.75rem;
-            color: var(--beige-dark);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        .main-nav ul {
-            display: flex;
-            gap: 15px;
-            list-style: none;
-        }
-
-        .main-nav a {
-            color: var(--beige-soft);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 6px 12px;
-            border-radius: 20px;
-            transition: 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .main-nav a:hover,
-        .main-nav a.active {
-            background: rgba(184,147,90,0.1);
-            border-color: var(--gold-accent);
-            color: var(--gold-accent);
-        }
-
-        .contact-header-btn {
-            background: transparent;
-            border: 2px solid var(--gold-accent);
-            color: var(--gold-accent);
-            padding: 8px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-        .contact-header-btn:hover {
-            background: var(--gold-accent);
-            color: var(--black-rich);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: var(--gold-accent);
-        }
-
-        /* =====  HERO SECTION ===== */
-        .hero-section {
-            background: linear-gradient(120deg, #2c2c2c 0%, #3a3a3a 50%, #6b4f3f 100%);
-            position: relative;
-            padding: 100px 0 80px;
-            overflow: hidden;
-        }
-
-        .hero-section::after {
-            content: "AL-SIRDAH";
-            position: absolute;
-            bottom: -10px;
-            left: 20px;
-            font-size: 8rem;
-            font-weight: 900;
-            color: rgba(245,240,232,0.02);
-            letter-spacing: 10px;
-            white-space: nowrap;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-            align-items: center;
-            position: relative;
-            z-index: 5;
-        }
-
-        .hero-text {
-            color: white;
-        }
-
-        .hero-badge {
-            background: rgba(0,0,0,0.3);
-            color: var(--gold-accent);
-            padding: 6px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
-            border: 1px solid var(--gold-accent);
-            font-size: 0.9rem;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .hero-title .highlight {
-            color: var(--gold-accent);
-            display: block;
-            font-size: 2rem;
-            font-weight: 400;
-            margin-top: 5px;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            color: #f0f0f0;
-            max-width: 90%;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--gold-accent);
-        }
-
-        .stat-text {
-            color: #e0e0e0;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .image-frame {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        .image-frame img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* =====  ABOUT SECTION ===== */
-        .about-section {
-            background: var(--beige-soft);
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--brown-deep);
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--gold-accent);
-            margin: 15px auto 0;
-        }
-
-        .section-subtitle {
-            color: var(--brown-strong);
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text {
-            background: white;
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: var(--shadow-card);
-        }
-
-        .about-text h3 {
-            color: var(--brown-deep);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            color: #4a4a4a;
-            margin-bottom: 25px;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        .vision-mission {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .vision-box, .mission-box {
-            padding: 20px;
-            background: var(--beige-soft);
-            border-radius: 20px;
-            border-right: 3px solid var(--gold-accent);
-        }
-
-        .vision-box h4, .mission-box h4 {
-            color: var(--brown-deep);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .about-image {
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* =====  SERVICES SECTION ===== */
-        .services-section {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background: var(--beige-soft);
-            padding: 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-            transition: 0.3s;
-            border: 1px solid var(--beige-dark);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold-accent);
-            box-shadow: var(--shadow-card);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--gold-accent);
-            font-size: 1.8rem;
-            border: 2px solid var(--beige-dark);
-        }
-
-        .service-card h3 {
-            color: var(--brown-deep);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .service-card p {
-            color: #5a5a5a;
-            font-size: 0.9rem;
-        }
-
-        /* =====  PRESENCE SECTION ===== */
-        .presence-section {
-            background: var(--brown-deep);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .presence-section .section-title,
-        .presence-section .section-subtitle {
-            color: white;
-        }
-
-        .presence-content {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .presence-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .presence-stat {
-            text-align: center;
-            padding: 30px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(5px);
-        }
-
-        .presence-stat .number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--gold-accent);
-            display: block;
-        }
-
-        .presence-map {
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        /* =====  PARTNERS SECTION ===== */
-        .partners-section {
-            background: var(--beige-soft);
-            padding: 80px 0;
-        }
-
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .partner-card {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid var(--beige-dark);
-            transition: 0.3s;
-        }
-
-        .partner-card:hover {
-            border-color: var(--gold-accent);
-            transform: translateY(-3px);
-        }
-
-        .partner-logo {
-            width: 80px;
-            height: 80px;
-            background: var(--beige-soft);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 2rem;
-            color: var(--brown-strong);
-        }
-
-        .partner-card h4 {
-            color: var(--brown-deep);
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .partner-card p {
-            color: #666;
-            font-size: 0.85rem;
-        }
-
-        /* =====  CONTACT SECTION ===== */
-        .contact-section {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 50px;
-            background: var(--beige-soft);
-            border-radius: 40px;
-            padding: 50px;
-            box-shadow: var(--shadow-card);
-        }
-
-        .contact-info h3 {
-            color: var(--brown-deep);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-details {
-            margin: 30px 0;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 15px;
-        }
-
-        .contact-item i {
-            width: 45px;
-            height: 45px;
-            background: var(--brown-strong);
-            color: var(--gold-accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-item a, .contact-item span {
-            color: var(--black-rich);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 2px solid var(--beige-dark);
-            border-radius: 12px;
-            font-family: 'Cairo', sans-serif;
-            background: white;
-        }
-
-        .contact-form button {
-            width: 100%;
-            padding: 15px;
-            background: var(--brown-strong);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 1rem;
-        }
-
-        .contact-form button:hover {
-            background: var(--gold-accent);
-            color: var(--black-rich);
-        }
-
-        /* =====  FOOTER ===== */
-        .main-footer {
-            background: #111;
-            color: #aaa;
-            padding: 60px 0 30px;
-            border-top: 4px solid var(--gold-accent);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo h3 {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .footer-logo p {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        .footer-links h4 {
-            color: var(--gold-accent);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold-accent);
-            padding-right: 5px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* =====  RESPONSIVE ===== */
-        @media (max-width: 1200px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .partners-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-content { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 900px) {
-            .main-nav ul { display: none; }
-            .menu-toggle { display: block; }
-            .hero-content,
-            .about-content,
-            .presence-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            .hero-title { font-size: 2.2rem; }
-            .hero-stats { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 600px) {
-            .services-grid,
-            .partners-grid,
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            .vision-mission { grid-template-columns: 1fr; }
-        }
-  @media (max-width: 400px) {
-           body{display: none;}
-        }
-
-    </style>
 </head>
 <body>
     <!-- الشريط العلوي -->
@@ -755,7 +27,7 @@
         </div>
     </div>
 
-    <!-- الهيدر -->
+    <!-- الهيدر =====================================================================================================-->
     <header class="main-header">
         <div class="container header-container">
             <div class="logo">
@@ -782,7 +54,7 @@
         </div>
     </header>
 
-    <!-- الرئيسية -->
+    <!-- الرئيسية ==============================================================================================================-->
     <section class="hero-section" id="home">
         <div class="container">
             <div class="hero-content">
@@ -818,7 +90,7 @@
         </div>
     </section>
 
-    <!-- من نحن -->
+    <!-- من نحن =================================================================================================-->
     <section class="about-section" id="about">
         <div class="container">
             <div class="section-header">
@@ -852,7 +124,7 @@
         </div>
     </section>
 
-    <!-- خدماتنا -->
+    <!-- خدماتنا ====================================================================================================-->
     <section class="services-section" id="services">
         <div class="container">
             <div class="section-header">
@@ -884,7 +156,7 @@
         </div>
     </section>
 
-    <!-- حضورنا -->
+    <!-- حضورنا =======================================================================================-->
     <section class="presence-section" id="presence">
         <div class="container">
             <div class="section-header">
@@ -921,7 +193,7 @@
         </div>
     </section>
 
-    <!-- شركاؤنا -->
+    <!-- شركاؤنا ==========================================================================================================================-->
     <section class="partners-section" id="partners">
         <div class="container">
             <div class="section-header">
@@ -953,7 +225,40 @@
         </div>
     </section>
 
-    <!-- اتصل بنا -->
+<!-- ===== عروضنا ============================================================= -->
+<section class="offers-section" id="offers">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">عروضنا</h2>
+            <p class="section-subtitle">فرص استثمارية حصرية</p>
+        </div>
+        <div class="offers-content">
+            <div class="offers-text">
+                <h3>عرض الشقق الفاخرة في حي الأندلس</h3>
+                <p>تمتع بخصم يصل إلى 20% على الشقق المطلة على البحر في مشروعنا الجديد. وحدات محدودة بمساحات تبدأ من 150 متر مربع، مع تشطيب فاخر ومواقف خاصة.</p>
+                <p>العرض ساري حتى نهاية الشهر الحالي. لا تفوت الفرصة!</p>
+                <a href="offers.html" class="offers-btn">عرض التفاصيل <i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="offers-image">
+                <a href="offers.html">
+                    <div class="image-frame">
+                        <img src="images/offer-main.jpg" alt="عرض الشقق الفاخرة">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+    <!-- اتصل بنا ==========================================================================================================-->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-header">
@@ -1001,7 +306,7 @@
         </div>
     </section>
 
-    <!-- الفوتر -->
+    <!-- الفوتر ==========================================================================================-->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
@@ -1046,7 +351,6 @@
         </div>
     </footer>
 
-    <!-- Simple Language Toggle (Demo) -->
     <script>
         let currentLang = 'ar';
         function toggleLanguage() {
@@ -1057,11 +361,9 @@
             const btn = document.querySelector('.lang-switcher');
             btn.textContent = currentLang === 'ar' ? 'English' : 'العربية';
             
-            // In a real project, you would load translation files here
             alert('Language switched to ' + (currentLang === 'ar' ? 'Arabic' : 'English') + ' (Demo)');
         }
 
-        // Mobile menu toggle
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             const menu = document.querySelector('.main-nav ul');
             menu.classList.toggle('show');

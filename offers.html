@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السرداح | عروضنا</title>
+    <!-- ربط ملف CSS الرئيسي -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ربط Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* تنسيقات إضافية خاصة بصفحة العروض */
+        .offers-gallery-page {
+            padding: 80px 0;
+            background: var(--beige-soft);
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--brown-deep);
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--brown-strong);
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+        }
+
+        .gallery-section {
+            margin-bottom: 60px;
+        }
+
+        .gallery-section h2 {
+            font-size: 2rem;
+            color: var(--brown-deep);
+            border-right: 5px solid var(--gold-accent);
+            padding-right: 20px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+            border: 1px solid var(--beige-dark);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold-accent);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 3px solid var(--gold-accent);
+        }
+
+        .gallery-card .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-card h3 {
+            color: var(--brown-deep);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .gallery-card p {
+            color: #5a5a5a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .gallery-card .badge {
+            display: inline-block;
+            background: var(--gold-accent);
+            color: var(--black-rich);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط العلوي (انسخه من index.html) -->
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="fas fa-shield-alt"></i> المصداقية تسبق الربح</span>
+            <div style="display: flex; align-items: center;">
+                <div class="top-bar-links">
+                    <a href="tel:0922229991"><i class="fas fa-phone-alt"></i> 0922229991</a>
+                    <a href="mailto:info@sirdah.ly"><i class="fas fa-envelope"></i> info@sirdah.ly</a>
+                </div>
+                <button class="lang-switcher" onclick="toggleLanguage()">English</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- الهيدر (انسخه من index.html) -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>السرداح</h1>
+                    <p>للتطوير العقاري وإدارة المشاريع</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#home">الرئيسية</a></li>
+                    <li><a href="index.html#about">من نحن</a></li>
+                    <li><a href="index.html#services">خدماتنا</a></li>
+                    <li><a href="index.html#presence">حضورنا</a></li>
+                    <li><a href="index.html#partners">شركاؤنا</a></li>
+                    <li><a href="offers.html" class="active">عروضنا</a></li>
+                    <li><a href="index.html#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contact" class="contact-header-btn">طلب استشارة</a>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- محتوى صفحة العروض -->
+    <section class="offers-gallery-page">
+        <div class="container">
+            <h1 class="page-title">عروضنا المميزة</h1>
+            <p class="page-subtitle">مجموعة من أجمل مشاريعنا وتصاميمنا الداخلية</p>
+
+            <!-- قسم العمارة من الخارج -->
+            <div class="gallery-section">
+                <h2>العمارة من الخارج</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img src="images/offer-apartment-1.jpg" alt="عمارة خارجية 1">
+                        <div class="card-content">
+                            <h3>واجهة العمارة الرئيسية</h3>
+                            <p>تصميم حديث يجمع بين الزجاج والخرسانة، مع إضاءة ليلية مميزة.</p>
+                            <span class="badge">مشروع الأندلس</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="images/offer-apartment-2.jpg" alt="عمارة خارجية 2">
+                        <div class="card-content">
+                            <h3>الواجهة الخلفية والحدائق</h3>
+                            <p>مساحات خضراء وأماكن جلوس مظللة لإطلالة مريحة.</p>
+                            <span class="badge">مشروع الأندلس</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم الصالونات -->
+            <div class="gallery-section">
+                <h2>الصالونات</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img src="images/salon1.jpeg" alt="صالون 1">
+                        <div class="card-content">
+                            <h3>صالون كلاسيكي</h3>
+                            <p>أثاث فخم مع ألوان دافئة تناسب الاستقبالات الرسمية.</p>
+                            <span class="badge">صالون</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="images/salon2.jpeg" alt="صالون 2">
+                        <div class="card-content">
+                            <h3>صالون عصري</h3>
+                            <p>تصميم بسيط وأنيق بألوان محايدة تناسب العصرية.</p>
+                            <span class="badge">صالون</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="images/salon3.jpeg" alt="صالون 3">
+                        <div class="card-content">
+                            <h3>صالون عربي</h3>
+                            <p>لمسة تراثية مع مقاعد مريحة ومجلس عربي أصيل.</p>
+                            <span class="badge">صالون</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم غرف النوم -->
+            <div class="gallery-section">
+                <h2>غرف النوم</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img src="images/srer1.jpeg" alt="غرفة نوم 1">
+                        <div class="card-content">
+                            <h3>غرفة نوم أطفال (1)</h3>
+                            <p>أسرة مريحة مع ألوان زاهية ومنطقة للعب.</p>
+                            <span class="badge">أطفال</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="images/srer3.jpeg" alt="غرفة نوم 3">
+                        <div class="card-content">
+                            <h3>غرفة نوم أطفال (2)</h3>
+                            <p>تصميم عملي مع مساحة تخزين كبيرة.</p>
+                            <span class="badge">أطفال</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="images/srer4.jpeg" alt="سرير دار نوم">
+                        <div class="card-content">
+                            <h3>سرير مزدوج</h3>
+                            <p>سرير كبير بخامات فاخرة لراحة لا مثيل لها.</p>
+                            <span class="badge">ماستر</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم المطبخ -->
+            <div class="gallery-section">
+                <h2>المطابخ</h2>
+                <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <div class="gallery-card">
+                        <img src="images/kitchen1.jpeg" alt="مطبخ 1">
+                        <div class="card-content">
+                            <h3>مطبخ عصري</h3>
+                            <p>تصميم مفتوح مع جزيرة وسطية وخزائن عالية الجودة.</p>
+                            <span class="badge">مطبخ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر (انسخه من index.html) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>السرداح</h3>
+                    <p>للتطوير العقاري وإدارة المشاريع</p>
+                    <p style="margin-top: 15px; font-size: 0.85rem;">المصداقية تسبق الربح</p>
+                </div>
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html#home">الرئيسية</a></li>
+                        <li><a href="index.html#about">من نحن</a></li>
+                        <li><a href="index.html#services">خدماتنا</a></li>
+                        <li><a href="offers.html">عروضنا</a></li>
+                        <li><a href="index.html#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>خدماتنا</h4>
+                    <ul>
+                        <li><a href="#">التطوير العقاري</a></li>
+                        <li><a href="#">إدارة المشاريع</a></li>
+                        <li><a href="#">الاستشارات</a></li>
+                        <li><a href="#">الخدمات المساندة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>مكتب الرئيسي</h4>
+                    <p>طرابلس - ليبيا</p>
+                    <p>هاتف: 0922229991</p>
+                    <p>بريد: info@sirdah.ly</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <a href="#" class="social-link" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" style="color: white;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" style="color: white;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 السرداح للتطوير العقاري. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'ar';
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            const btn = document.querySelector('.lang-switcher');
+            btn.textContent = currentLang === 'ar' ? 'English' : 'العربية';
+            alert('Language switched to ' + (currentLang === 'ar' ? 'Arabic' : 'English') + ' (Demo)');
+        }
+
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const menu = document.querySelector('.main-nav ul');
+            menu.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
