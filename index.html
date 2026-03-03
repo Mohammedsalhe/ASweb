@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- الشريط العلوي -->
-    <div class="top-bar">
+    <!-- <div class="top-bar">
         <div class="container">
             <span><i class="fas fa-shield-alt"></i> المصداقية تسبق الربح</span>
             <div style="display: flex; align-items: center;">
@@ -25,7 +25,7 @@
                 <button class="lang-switcher" onclick="toggleLanguage()">English</button>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- الهيدر =====================================================================================================-->
     <header class="main-header">
@@ -46,6 +46,7 @@
                     <li><a href="#services">خدماتنا</a></li>
                     <li><a href="#presence">حضورنا</a></li>
                     <li><a href="#partners">شركاؤنا</a></li>
+                    <li><a href="offers.html">عروضنا</a></li>
                     <li><a href="#contact">اتصل بنا</a></li>
                 </ul>
             </nav>
@@ -55,40 +56,65 @@
     </header>
 
     <!-- الرئيسية ==============================================================================================================-->
-    <section class="hero-section" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-badge">تطوير عقاري منضبط</span>
-                    <h1 class="hero-title">
-                        نبني بالانضباط <span class="highlight">لا بالسرعة فقط</span>
-                    </h1>
-                    <p class="hero-description">
-                        في السرداح، المصداقية تسبق الربح. نلتزم بمنهج منضبط في التطوير العقاري وإدارة المشاريع، لنقدم قيمة حقيقية لعملائنا وشركائنا.
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">+15</span>
-                            <span class="stat-text">عام من الخبرة</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">+30</span>
-                            <span class="stat-text">مشروع مكتمل</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-text">التزام بالمواعيد</span>
-                        </div>
+  <!-- <section class="hero-section" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">تطوير عقاري منضبط</span>
+                <h1 class="hero-title">
+                    نبني بالانضباط <span class="highlight">لا بالسرعة فقط</span>
+                </h1>
+                <p class="hero-description">
+                    في السرداح، المصداقية تسبق الربح. نلتزم بمنهج منضبط في التطوير العقاري وإدارة المشاريع، لنقدم قيمة حقيقية لعملائنا وشركائنا.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">+15</span>
+                        <span class="stat-text">عام من الخبرة</span>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-frame">
-                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800" alt="مشروع عقاري">
+                    <div class="stat">
+                        <span class="stat-number">+30</span>
+                        <span class="stat-text">مشروع مكتمل</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-text">التزام بالمواعيد</span>
                     </div>
                 </div>
             </div>
+            <div class="hero-image">
+                <div class="image-frame video-frame">
+                    <video autoplay muted loop playsinline class="hero-inline-video">
+                        <source src="images/mp4/Video.mp4" type="video/mp4">
+                        متصفحك لا يدعم تشغيل الفيديو.
+                    </video>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section> -->
+
+<!-- القسم الرئيسي - فيديو فقط -->
+<!-- الصفحة الرئيسية - قسم الفيديو -->
+<!-- القسم الرئيسي (HERO) - فيديو كبير في الخلفية -->
+<section class="hero" id="home">
+    <!-- فيديو الخلفية -->
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="images/mp4/A1.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+    
+    <!-- طبقة سوداء شفافة لتحسين وضوح النص -->
+    <div class="hero-overlay"></div>
+    
+    <div class="container">
+        <div class="hero-content">
+            <h1>وعد بي التسليم...<span>وأمان في التنفيذ</span></h1>
+            <p>في السرداح، المصداقية تسبق الربح. نلتزم بمنهج منضبط في التطوير العقاري وإدارة المشاريع.</p>
+            <a href="#offers" class="hero-btn">اكتشف عروضنا <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
+</section>
 
     <!-- من نحن =================================================================================================-->
     <section class="about-section" id="about">
@@ -118,7 +144,7 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800" alt="فريق العمل">
+                    <img src="images/offer-main.jpg" alt="فريق العمل">
                 </div>
             </div>
         </div>

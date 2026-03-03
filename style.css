@@ -199,114 +199,179 @@ body {
 }
 
 /* =====  HERO SECTION ===== */
-.hero-section {
-    background: linear-gradient(120deg, #2c2c2c 0%, #3a3a3a 50%, #6b4f3f 100%);
+ 
+/* ===== القسم الرئيسي - فيديو كبير في الخلفية ===== */
+/* ===== القسم الرئيسي - فيديو كبير في الخلفية (مدمج مع التصميم القديم) ===== */
+.hero {
     position: relative;
-    padding: 100px 0 80px;
+    width: 100%;
+    height: 100vh;              /* ارتفاع الشاشة بالكامل */
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    background: var(--black);   /* لون خلفية احتياطي من المتغيرات */
 }
 
-.hero-section::after {
-    content: "AL-SIRDAH";
+/* فيديو الخلفية */
+.hero-video {
     position: absolute;
-    bottom: -10px;
-    left: 20px;
-    font-size: 8rem;
-    font-weight: 900;
-    color: rgba(245,240,232,0.02);
-    letter-spacing: 10px;
-    white-space: nowrap;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* الفيديو يغطي المساحة بالكامل */
+    z-index: 0;
+}
+
+/* طبقة التعتيم المحسنة */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+}
+
+/* المحتوى */
+.hero .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 50px;
-    align-items: center;
-    position: relative;
-    z-index: 5;
-}
-
-.hero-text {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
     color: white;
+    animation: fadeInUp 1s ease;
 }
 
-.hero-badge {
-    background: rgba(0,0,0,0.3);
-    color: var(--gold-accent);
-    padding: 6px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 20px;
-    border: 1px solid var(--gold-accent);
-    font-size: 0.9rem;
-}
-
-.hero-title {
-    font-size: 3rem;
+.hero-content h1 {
+    font-size: 4rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.hero-title .highlight {
-    color: var(--gold-accent);
+.hero-content h1 span {
+    color: var(--gold);         /* استخدام متغير الذهب من التصميم القديم */
     display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    margin-top: 5px;
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-    color: #f0f0f0;
-    max-width: 90%;
-}
-
-.hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--gold-accent);
-}
-
-.stat-text {
-    color: #e0e0e0;
+    font-size: 2.2rem;
     font-weight: 500;
-    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
-.hero-image {
-    position: relative;
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.image-frame {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);    /* استخدام متغير الذهب */
+    color: var(--black);        /* استخدام متغير الأسود */
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold);
 }
 
-.image-frame img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
+.hero-btn:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-3px);
+    border-color: var(--gold);
 }
 
+/* أنيميشن */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تجاوب للشاشات المختلفة */
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .hero-content h1 span {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .hero-content h1 span {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh;
+        min-height: 500px;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content h1 span {
+        font-size: 1.4rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    .hero-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 70vh;
+        min-height: 400px;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content h1 span {
+        font-size: 1.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    .hero-btn {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+}
 /* =====  ABOUT SECTION ===== */
 .about-section {
     background: var(--beige-soft);
@@ -555,9 +620,9 @@ body {
 }
 
 
-/* =====  عروضنا (Offers Section) ===== */
+/* =====  عروضنا (Offers Section) =================================================== */
 .offers-section {
-    background: var(--beige-soft);
+    background: white;
     padding: 80px 0;
 }
 
@@ -570,7 +635,7 @@ body {
 }
 
 .offers-text {
-    background: white;
+    background: var(--beige-soft);
     padding: 40px;
     border-radius: 30px;
     box-shadow: var(--shadow-card);
